@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+
+<header id="header">
+    <nav class="navbar">
+        <h1 class="header-title">Todo List By jQuery</h1>
+        <ul class="item-list">
+            <li class="item"><a href="">Not Started</a></li>
+            <li class="item"><a href="">In Progress</a></li>
+            <li class="item"><a href="">Done</a></li>
+        </ul>
+    </nav>
+</header>
+<main id="main">
+    <section class="todo-create">
+        <h2 class="main-title">Todo Create</h2>
+        <form action="" class="create-form">
+            <label for="title">
+                Title:<input type="text" id="title" name="title">
+            </label>
+            <label for="content">
+                Content:<textarea name="content" id="content" cols="30" rows="10"></textarea>
+            </label>
+            <input disabled type="submit" class="submit" name="submit">
+        </form>
+    </section>
+    <section class="todo-list">
+        <h2 class="main-title">Todo List</h2>
+        <div class="todo js-todo-unstarted">
+            <span class="icon"> □︎ </span>
+            <p class="todo-id">1</p>
+            <p class="todo-title">お米を買う</p>
+            <p class="todo-content">ミルキークイーン（5kg）を東急ストアで購入する</p>
+            <p class="todo-edit">編集ボタン</p>
+            <p class="todo-delete">削除ボタン</p>
+        </div>
+        <div class="todo js-todo-progress">
+            <span class="icon"> □ </span>
+            <p class="todo-id">2</p>
+            <p class="todo-title">JavascriptのTodoアプリを作る</p>
+            <p class="content">以前に作成したTodoリストに、進捗に応じて表示する機能を追加する</p>
+            <p class="edit">編集ボタン</p>
+            <p class="delete">削除ボタン</p>
+        </div>
+        <div class="todo js-todo-done">
+            <span class="icon"> ☑ </span>
+            <p class="todo-id">3</p>
+            <p class="todo-title">バックパックを購入する</p>
+            <p class="content">台湾旅行用に10L程度のバックパックを購入する</p>
+            <p class="edit">編集ボタン</p>
+            <p class="delete">削除ボタン</p>
+        </div>
+    </section>
+</main>
+<footer id="footer">&copy;2019 Tokuyaman inc.</footer>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<script src="main.js"></script>
+</body>
+</html>
