@@ -265,7 +265,7 @@ input, select {
     border: solid 1px #45B4E6;
     border-radius: 3px;
     display: flex;
-    height: 100px;
+    height: 150px;
     margin-bottom: 20px;
     padding: 15px;
 }
@@ -289,6 +289,20 @@ input, select {
 
 .right > .todo-content {
     margin-bottom: 10px;
+}
+
+.right > .edit-title, .right > .edit-content {
+    display: none;
+    font-size: 16px;
+    width: 100%;
+}
+
+.right > .edit-title {
+    margin-bottom: 10px;
+}
+
+.right > .edit-content {
+    height: calc(100% - 50px);
 }
 
 .right > .todo-icons {
