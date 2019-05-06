@@ -16,47 +16,71 @@
             <li class="item"><a href="">Not Started</a></li>
             <li class="item"><a href="">In Progress</a></li>
             <li class="item"><a href="">Done</a></li>
+            <li class="create-btn">Create</li>
         </ul>
     </nav>
 </header>
 <main id="main">
-    <section class="todo-create">
-        <h2 class="main-title">Todo Create</h2>
+    <section class="todo-create js-show-modal-target">
+        <h2 class="todo-create-title">Todo Create</h2>
         <form action="" class="create-form">
             <label for="title">
-                Title:<input type="text" id="title" name="title">
+                <input type="text" id="title" name="title" placeholder="Title">
             </label>
             <label for="content">
-                Content:<textarea name="content" id="content" cols="30" rows="10"></textarea>
+                <textarea name="content" id="content" cols="30"
+                          rows="10" placeholder="Content"></textarea>
             </label>
-            <input disabled type="submit" class="submit" name="submit">
+            <input disabled type="submit" class="submit" name="submit" value="submit">
         </form>
+        <button class="cancel-btn js-hide-modal-btn">Cancel</button>
     </section>
+    <div class="cover js-show-modal-cover"></div>
     <section class="todo-list">
-        <h2 class="main-title">Todo List</h2>
-        <div class="todo js-todo-unstarted">
-            <span class="icon"> □︎ </span>
-            <p class="todo-id">1</p>
-            <p class="todo-title">お米を買う</p>
-            <p class="todo-content">ミルキークイーン（5kg）を東急ストアで購入する</p>
-            <p class="todo-edit">編集ボタン</p>
-            <p class="todo-delete">削除ボタン</p>
-        </div>
-        <div class="todo js-todo-progress">
-            <span class="icon"> □ </span>
-            <p class="todo-id">2</p>
-            <p class="todo-title">JavascriptのTodoアプリを作る</p>
-            <p class="content">以前に作成したTodoリストに、進捗に応じて表示する機能を追加する</p>
-            <p class="edit">編集ボタン</p>
-            <p class="delete">削除ボタン</p>
-        </div>
-        <div class="todo js-todo-done">
-            <span class="icon"> ☑ </span>
-            <p class="todo-id">3</p>
-            <p class="todo-title">バックパックを購入する</p>
-            <p class="content">台湾旅行用に10L程度のバックパックを購入する</p>
-            <p class="edit">編集ボタン</p>
-            <p class="delete">削除ボタン</p>
+        <h2 class="todo-list-title">Todo List</h2>
+        <div class="todos">
+            <div class="todo js-todo-unstarted">
+                <div class="left">
+                    <i class="icon far fa-lg fa-square"></i>
+                </div>
+                <!--<p class="todo-id">1</p>-->
+                <div class="right">
+                    <p class="todo-title">お米を買う</p>
+                    <p class="todo-content">ミルキークイーン（5kg）を東急ストアで購入する</p>
+                    <div class="todo-icons">
+                        <p class="edit"><i class="icon far fa-lg fa-edit"></i></p>
+                        <p class="delete"><i class="icon far fa-lg fa-trash-alt"></i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="todo js-todo-progress">
+                <div class="left">
+                    <i class="icon far fa-lg fa-square"></i>
+                </div>
+                <!--<p class="todo-id">2</p>-->
+                <div class="right">
+                    <p class="todo-title">JavascriptのTodoアプリを作る</p>
+                    <p class="todo-content">以前に作成したTodoリストに、進捗に応じて表示する機能を追加する</p>
+                    <div class="todo-icons">
+                        <p class="edit"><i class="icon far fa-lg fa-edit"></i></p>
+                        <p class="delete"><i class="icon far fa-lg fa-trash-alt"></i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="todo js-todo-done">
+                <div class="left">
+                    <i class="icon far fa-lg fa-check-square"></i>
+                </div>
+                <!--<p class="todo-id">3</p>-->
+                <div class="right">
+                    <p class="todo-title">バックパックを購入する</p>
+                    <p class="todo-content">台湾旅行用に10L程度のバックパックを購入する</p>
+                    <div class="todo-icons">
+                        <p class="edit"><i class="icon far fa-lg fa-edit"></i></p>
+                        <p class="delete"><i class="icon far fa-lg fa-trash-alt"></i></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </main>
