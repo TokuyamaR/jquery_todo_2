@@ -23,4 +23,17 @@ $(function () {
             todoNode.addClass('js-todo-unstarted');
         }
     });
+
+    // 削除ボタンをクリックしたらtodoが削除される機能
+    $(document).on('click', '.delete', function () {
+        var todoNode = $(this).closest('.todo');
+
+        var result = confirm('本当に削除しますか');
+
+        if (result) {
+            todoNode.attr('style', 'display: none');
+        } else {
+            return $();
+        }
+    });
 });
