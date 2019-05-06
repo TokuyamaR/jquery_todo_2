@@ -100,4 +100,204 @@ input, select {
     vertical-align: middle;
 }
 
+/* header */
+
+#header {
+    width: 100%;
+}
+
+.navbar {
+    background-color: #45B4E6;
+    height: 80px;
+    padding: 0 10px;
+}
+
+.header-title {
+    color: #ffffff;
+    font-size: 24px;
+    padding: 10px 0;
+
+}
+
+.item-list {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.item {
+    border: solid 1px #ffffff;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.create-btn {
+    background-color: #ffffff;
+    border: solid 1px #EC9001;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #EC9001;
+    margin-left: auto;
+    padding: 5px;
+}
+
+.create-btn:hover {
+    color: #ffffff;
+    background-color: #EC9001;
+    transition: 0.5s;
+
+}
+
+.item:hover {
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.item a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/*JSで制御を検討(.itemとaタグの間でhover時の挙動がずれる)*/
+.item a:hover {
+    color: #45B4E6;
+    transition: 0.5s;
+}
+
+.item:last-child {
+    margin-right: 0;
+}
+
+/* section todo-create */
+
+.todo-create {
+    background-color: #ffffff;
+    display: none;
+    height: 400px;
+    padding: 15px;
+    box-sizing: border-box; /* 15px in width 50% */
+    position: absolute;
+    top: 10%;
+    width: 50%;
+    z-index: 1
+}
+
+.cover {
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.todo-create-title {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#title, #content {
+    border: solid 1px;
+    font-size: 16px;
+    width: 100%;
+}
+
+#title {
+    margin-bottom: 15px;
+}
+
+.create-form > .submit {
+    border-radius: 5px;
+    font-size: 12pt;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 15px;
+    background: #000000;
+    color: #ffffff;
+    width: 100%;
+}
+
+.create-form > .submit:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.cancel-btn {
+    background: #ffffff;
+    border-radius: 5%;
+    color: #000000;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 15px;
+    width: 100%;
+}
+
+/* section todo-list */
+.todo-list {
+    padding: 10px
+}
+
+.todo-list-title {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.todo-list-title {
+    font-size: 20px
+}
+
+.todos {
+    margin: 0 100px;
+}
+
+.todo {
+    border: solid 1px #45B4E6;
+    border-radius: 3px;
+    display: flex;
+    height: 100px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.left {
+    margin-right: 10px;
+}
+
+.right {
+    width: 100%;
+}
+
+.right > .todo-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.right > .todo-content {
+    margin-bottom: 10px;
+}
+
+.right > .todo-icons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.edit, .delete {
+    cursor: pointer;
+}
+
+.edit {
+    margin-right: 10px;
+}
+
+/* footer */
+
+#footer {
+    text-align: center;
+}
+
+
 
