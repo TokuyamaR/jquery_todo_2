@@ -35,8 +35,10 @@ $(function () {
                     '<i class="check-icon far fa-lg fa-square"></i>\n' +
                     '</div>\n' +
                     '<div class="right">\n' +
-                    '<p class="todo-title">' + titleVal + '</p>\n' +
-                    '<p class="todo-content">' + contentVal + '</p>\n' +
+                    '<p class="todo-title js-title_text">' + titleVal + '</p>\n' +
+                    '<p class="todo-content js-content_text">' + contentVal + '</p>\n' +
+                    '<input type="text" placeholder="Title" class="edit-title js-title_text-edit" value="' + titleVal + '">' +
+                    '<textarea class="edit-content js-content_text-edit">' + contentVal + '</textarea>' +
                     '<div class="todo-icons">\n' +
                     '<p class="edit"><i class="icon far fa-lg fa-edit"></i></p>\n' +
                     '<p class="delete"><i class="icon far fa-lg fa-trash-alt"></i></p>\n' +
@@ -72,6 +74,29 @@ $(function () {
             $(this).addClass('fa-square');
             todoNode.removeClass('js-todo-done');
             todoNode.addClass('js-todo-unstarted');
+        }
+    });
+
+    // 編集ボタンをクリックしたらtodoモーダルが表示されて編集可能な状態とする
+    $(document).on('click', '.edit', function () {
+        var jsTitleTextNode = $(this).closest('.right').children('.js-title_text');
+        var jsContentTextNode = $(this).closest('.right').children('.js-content_text');
+
+        jsTitleTextNode.hide().siblings('.js-title_text-edit').show();
+        jsContentTextNode.hide().siblings('.js-content_text-edit').show();
+    });
+
+    // 編集後に、textarea内でshift + enterを押下することで編集完了状態とする
+    $(document).on('keyup', '.js-content_text-edit', function (e) {
+        if (e.keyCode === 13 && e.shiftKey === true) {
+            var titleEdit = $(this).siblings('.js-title_text-edit');
+            var contentEdit = $(this);
+            var titleEditVal = titleEdit.val();
+            var contentEditVal = contentEdit.val();
+            titleEdit.hide().siblings('.js-title_text').text(titleEditVal).show()
+                .closest('.todo').attr('data-title', titleEditVal);
+            contentEdit.hide().siblings('.js-content_text').text(contentEditVal).show()
+                .closest('.todo').attr('data-content', contentEditVal);
         }
     });
 
