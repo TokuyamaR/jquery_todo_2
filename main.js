@@ -2,19 +2,25 @@ $(function () {
 
     var modalTarget = $('.js-show-modal-target');
     var modalCover = $('.js-show-modal-cover');
+    var todoListNode = $('.todos');
 
-    // todo作成フォーム用
-    $('.create-btn').on('click', function () {
-        var modalWidth = $('.js-show-modal-target').width();
-        var windowWidth = $(window).width();
-        var modalPositipn = (windowWidth / 2 - modalWidth / 2);
-        modalTarget.attr('style', 'margin-left:' + modalPositipn + 'px');
-        modalTarget.fadeIn(500);
-        modalCover.fadeIn(500);
-    });
+    /*-------------- todoリスト 操作 -------------*/
 
-    $('.js-hide-modal-btn').on('click', function () {
-        modalTarget.fadeOut(500);
-        modalCover.fadeOut(500);
+    // todoの完了・未完了の切り替え
+    $(document).on('click', '.check-icon', function () {
+        var todoNode = $(this).closest('.todo');
+
+        if ($(this).hasClass('fa-square')) {
+            $(this).removeClass('fa-square');
+            $(this).addClass('fa-check-square');
+            todoNode.removeClass('js-todo-unstarted');
+            todoNode.removeClass('js-todo-progress');
+            todoNode.addClass('js-todo-done');
+        } else if ($(this).hasClass('fa-check-square')) {
+            $(this).removeClass('fa-check-square');
+            $(this).addClass('fa-square');
+            todoNode.removeClass('js-todo-done');
+            todoNode.addClass('js-todo-unstarted');
+        }
     });
 });

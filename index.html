@@ -24,24 +24,25 @@
     <section class="todo-create js-show-modal-target">
         <h2 class="todo-create-title">Todo Create</h2>
         <form action="" class="create-form">
+            <p class="error-msg"></p>
             <label for="title">
-                <input type="text" id="title" name="title" placeholder="Title">
+                <input type="text" id="title" name="title" placeholder="Title" class="js-val-title">
             </label>
             <label for="content">
                 <textarea name="content" id="content" cols="30"
-                          rows="10" placeholder="Content"></textarea>
+                          rows="10" placeholder="Content" class="js-val-content"></textarea>
             </label>
-            <input disabled type="submit" class="submit" name="submit" value="submit">
+            <input type="submit" class="submit" value="submit">
         </form>
         <button class="cancel-btn js-hide-modal-btn">Cancel</button>
     </section>
     <div class="cover js-show-modal-cover"></div>
     <section class="todo-list">
         <h2 class="todo-list-title">Todo List</h2>
-        <div class="todos">
-            <div class="todo js-todo-unstarted">
+        <ul class="todos">
+            <li class="todo js-todo-unstarted" data-title="お米を買う" data-content="ミルキークイーン（5kg）を東急ストアで購入する">
                 <div class="left">
-                    <i class="icon far fa-lg fa-square"></i>
+                    <i class="check-icon far fa-lg fa-square"></i>
                 </div>
                 <!--<p class="todo-id">1</p>-->
                 <div class="right">
@@ -52,10 +53,11 @@
                         <p class="delete"><i class="icon far fa-lg fa-trash-alt"></i></p>
                     </div>
                 </div>
-            </div>
-            <div class="todo js-todo-progress">
+            </li>
+            <li class="todo js-todo-progress" data-title="JavascriptのTodoアプリを作る"
+                data-content="前に作成したTodoリストに、進捗に応じて表示する機能を追加する">
                 <div class="left">
-                    <i class="icon far fa-lg fa-square"></i>
+                    <i class="check-icon far fa-lg fa-square"></i>
                 </div>
                 <!--<p class="todo-id">2</p>-->
                 <div class="right">
@@ -66,10 +68,10 @@
                         <p class="delete"><i class="icon far fa-lg fa-trash-alt"></i></p>
                     </div>
                 </div>
-            </div>
-            <div class="todo js-todo-done">
+            </li>
+            <li class="todo js-todo-done" data-title="バックパックを購入する" data-content="台湾旅行用に10L程度のバックパックを購入する">
                 <div class="left">
-                    <i class="icon far fa-lg fa-check-square"></i>
+                    <i class="check-icon far fa-lg fa-check-square"></i>
                 </div>
                 <!--<p class="todo-id">3</p>-->
                 <div class="right">
@@ -80,8 +82,8 @@
                         <p class="delete"><i class="icon far fa-lg fa-trash-alt"></i></p>
                     </div>
                 </div>
-            </div>
-        </div>
+            </li>
+        </ul>
     </section>
 </main>
 <footer id="footer">&copy;2019 Tokuyaman inc.</footer>
