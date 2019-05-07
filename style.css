@@ -154,13 +154,13 @@ input, select {
     transition: 0.5s;
 }
 
-.item a {
+.item {
     color: #ffffff;
     text-decoration: none;
 }
 
 /*JSで制御を検討(.itemとaタグの間でhover時の挙動がずれる)*/
-.item a:hover {
+.item:hover {
     color: #45B4E6;
     transition: 0.5s;
 }
@@ -249,7 +249,7 @@ input, select {
 }
 
 .todo-list-title {
-    margin-bottom: 10px;
+    margin: 20px 0;
     text-align: center;
 }
 
