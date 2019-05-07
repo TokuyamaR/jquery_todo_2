@@ -46,6 +46,7 @@ $(function () {
                     '</div>\n' +
                     '</li>';
                 todoListNode.prepend(todoItem);
+                $('.todo').show();
 
                 modalTarget.fadeOut(500);
                 modalCover.fadeOut(500);
@@ -111,5 +112,43 @@ $(function () {
         } else {
             return $();
         }
+    });
+
+    // 選択した進捗のTodoだけ表示する
+    // unstartedタスク
+    $(document).on('click', '.js-unstarted', function () {
+        $('.todo').show().each(function (i, elm) {
+            var unstartedNode = $(elm).hasClass('js-todo-unstarted');
+
+            if (unstartedNode) {
+                return true;
+            }
+
+            $(elm).hide();
+        });
+    });
+    // In Progressタスク
+    $(document).on('click', '.js-progress', function () {
+        $('.todo').show().each(function (i, elm) {
+            var unstartedNode = $(elm).hasClass('js-todo-progress');
+
+            if (unstartedNode) {
+                return true;
+            }
+
+            $(elm).hide();
+        });
+    });
+    // Doneタスク
+    $(document).on('click', '.js-done', function () {
+        $('.todo').show().each(function (i, elm) {
+            var unstartedNode = $(elm).hasClass('js-todo-done');
+
+            if (unstartedNode) {
+                return true;
+            }
+
+            $(elm).hide();
+        });
     });
 });
